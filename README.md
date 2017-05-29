@@ -1,50 +1,16 @@
-# gulp-nginclude [![Build Status](https://secure.travis-ci.org/mgcrea/gulp-nginclude.png?branch=master)](http://travis-ci.org/#!/mgcrea/gulp-nginclude)
+# Fork of gulp-nginclude (original: mgcrea/gulp-nginclude) with cwd support.
 
-> Gulp task for embedding AngularJS static ngInclude elements.
+> Gulp task for embedding AngularJS static ngInclude elements. 
+> This fork solves the issue that the includeable html's path had to be given relative to the include location.  
+> See the detailed documentation at https://github.com/mgcrea/gulp-nginclude
 
+## New option
 
-## Getting Started
-This plugin requires Gulp `^3.0.0`
+- cwd (String)
 
-If you haven't used [Gulp](http://gulpjs.com/) before, be sure to check out the [Getting Started](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md) guide, as it explains how to create a [Gulpfile](https://github.com/gulpjs/gulp/blob/master/docs/API.md) as well as install and use Gulp plugins. Once you're familiar with that process, you may install this plugin with this command:
+Specifies the reletive path root.
 
-```shell
-npm install gulp-nginclude --save-dev
-```
-
-Once the plugin has been installed, it may be required inside your Gulpfile with this line of JavaScript:
-
-```js
-var gulp = require('gulp-nginclude');
-```
-
-
-## Usage
-
-```javascript
-var nginclude = require('gulp-nginclude');
-
-gulp.task('views:dist', function() {
-  gulp.src(['index.html', 'views/{,*/}*.html'])
-    .pipe(nginclude())
-    .dest('dist');
-});
-```
-
-
-## Options
-
-- trim (Boolean)
-
-Trim included templates.
-
-Default: `true`
-
-
-## Contributing
-
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality.
-
+Default: `null`
 
 ## License
 
